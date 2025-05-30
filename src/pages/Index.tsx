@@ -1,9 +1,9 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Mail, Home, Building, Hammer, CreditCard, Star, Users, Shield, Clock, TrendingUp, Award, HeartHandshake } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,25 +13,29 @@ const Index = () => {
       icon: Home,
       title: "Buying & Selling",
       description: "Premium houses, plots, flats, and lands in Narasaraopet and surrounding areas",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
+      gradient: "bg-gradient-to-br from-blue-50 to-cyan-50"
     },
     {
       icon: Building,
       title: "Property Consultation", 
       description: "Expert guidance for both buyers and sellers with transparent dealings",
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
+      gradient: "bg-gradient-to-br from-green-50 to-emerald-50"
     },
     {
       icon: Hammer,
       title: "Construction Services",
       description: "Contract-based construction for your dream home with quality assurance",
-      color: "from-blue-600 to-green-500"
+      color: "from-blue-600 to-green-500",
+      gradient: "bg-gradient-to-br from-blue-50 to-green-50"
     },
     {
       icon: CreditCard,
       title: "Loan Assistance",
       description: "Bank loan support for property purchase or construction projects",
-      color: "from-green-600 to-emerald-600"
+      color: "from-green-600 to-emerald-600",
+      gradient: "bg-gradient-to-br from-green-50 to-emerald-50"
     }
   ];
 
@@ -40,25 +44,43 @@ const Index = () => {
       url: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=500&h=300&fit=crop",
       title: "Luxury Family Villa",
       type: "House",
-      area: "2,400 sq ft"
+      area: "2,400 sq ft",
+      features: ["3 Bedrooms", "Garden", "Parking"]
     },
     {
       url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=500&h=300&fit=crop",
       title: "Modern Apartment",
       type: "Flat",
-      area: "1,200 sq ft"
+      area: "1,200 sq ft",
+      features: ["2 Bedrooms", "Balcony", "Lift"]
     },
     {
       url: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=500&h=300&fit=crop",
       title: "Commercial Complex",
       type: "Commercial",
-      area: "5,000 sq ft"
+      area: "5,000 sq ft",
+      features: ["Ground Floor", "Main Road", "Parking"]
     },
     {
       url: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=500&h=300&fit=crop",
       title: "Prime Location Plot",
       type: "Land",
-      area: "1,800 sq ft"
+      area: "1,800 sq ft",
+      features: ["Corner Plot", "Approved", "Clear Title"]
+    },
+    {
+      url: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=500&h=300&fit=crop",
+      title: "Premium Villa",
+      type: "House",
+      area: "3,200 sq ft",
+      features: ["4 Bedrooms", "Swimming Pool", "Garden"]
+    },
+    {
+      url: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&h=300&fit=crop",
+      title: "Scenic Property",
+      type: "Villa",
+      area: "2,800 sq ft",
+      features: ["Mountain View", "Spacious", "Modern"]
     }
   ];
 
@@ -66,91 +88,115 @@ const Index = () => {
     {
       icon: Award,
       title: "Expert Leadership",
-      description: "Led by Mr. Kovuru Nagaraju (MBA) with professional expertise",
-      color: "from-blue-400 to-cyan-500"
+      description: "Led by Mr. Kovuru Nagaraju (MBA) with professional expertise and years of experience",
+      color: "from-blue-400 to-cyan-500",
+      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-100"
     },
     {
       icon: Shield,
       title: "Transparent Dealings",
-      description: "Honest and straightforward approach to all transactions",
-      color: "from-green-400 to-emerald-500"
+      description: "Honest and straightforward approach to all transactions with complete transparency",
+      color: "from-green-400 to-emerald-500",
+      bgColor: "bg-gradient-to-br from-green-50 to-emerald-100"
     },
     {
       icon: HeartHandshake,
       title: "Personalized Service",
-      description: "Tailored solutions for individual buyers and investors",
-      color: "from-blue-500 to-green-500"
+      description: "Tailored solutions for individual buyers and investors with dedicated support",
+      color: "from-blue-500 to-green-500",
+      bgColor: "bg-gradient-to-br from-blue-50 to-green-100"
     },
     {
       icon: TrendingUp,
       title: "End-to-End Support",
-      description: "Complete assistance from property search to legal paperwork",
-      color: "from-green-500 to-cyan-500"
+      description: "Complete assistance from property search to legal paperwork and loan processing",
+      color: "from-green-500 to-cyan-500",
+      bgColor: "bg-gradient-to-br from-green-50 to-cyan-100"
     }
   ];
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
-      {/* Hero Section */}
+      {/* Hero Section with Enhanced Design */}
       <section className="relative h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-green-900 flex items-center justify-center overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-xl animate-pulse"></div>
-          <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-blue-500/20 to-green-500/20 rounded-full blur-xl animate-pulse delay-500"></div>
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-400/30 to-cyan-400/30 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-r from-green-400/30 to-emerald-400/30 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-blue-500/30 to-green-500/30 rounded-full blur-xl animate-pulse delay-500"></div>
+          <div className="absolute top-1/4 right-1/4 w-28 h-28 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-xl animate-pulse delay-700"></div>
         </div>
         
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&h=1080&fit=crop')"
           }}
         ></div>
         
-        <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-6">
+        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-6">
           <div className="animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent leading-tight">
-              Siva Sai Real Estates
-            </h1>
-            <span className="block text-3xl md:text-5xl text-green-400 font-semibold mb-8 animate-slide-in-right">
-              & Consultant
-            </span>
+            <div className="mb-8">
+              <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent leading-tight drop-shadow-2xl">
+                Siva Sai Real Estates
+              </h1>
+              <span className="block text-3xl md:text-5xl text-green-400 font-semibold mb-8 animate-slide-in-right drop-shadow-lg">
+                & Consultant
+              </span>
+            </div>
           </div>
-          <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in max-w-3xl mx-auto leading-relaxed">
-            Your Trusted Partner for Premium Property Solutions in Narasaraopet
-          </p>
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 mb-10 border border-white/20 shadow-2xl">
+            <p className="text-xl md:text-2xl mb-6 opacity-95 leading-relaxed">
+              Your Trusted Partner for Premium Property Solutions in Narasaraopet
+            </p>
+            <p className="text-lg opacity-80 max-w-4xl mx-auto">
+              Led by Mr. Kovuru Nagaraju (MBA) - Professional expertise, transparent dealings, personalized service
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-semibold px-10 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-semibold px-12 py-6 text-lg shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 rounded-full border border-white/20">
               Explore Properties
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+            <Button size="lg" variant="outline" className="border-2 border-white/50 text-white hover:bg-white hover:text-blue-900 px-12 py-6 text-lg font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 rounded-full backdrop-blur-sm bg-white/10">
               Contact Expert
             </Button>
           </div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="container mx-auto px-6">
+      {/* Enhanced About Section */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 via-blue-50 to-green-50 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-slate-900/10 to-transparent"></div>
+        <div className="container mx-auto px-6 relative">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">About Siva Sai Real Estates</h2>
+            <div className="text-center mb-24">
+              <Badge className="mb-6 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 text-lg font-semibold rounded-full shadow-lg">
+                About Us
+              </Badge>
+              <h2 className="text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-green-800 bg-clip-text text-transparent mb-8 leading-tight">
+                Siva Sai Real Estates & Consultant
+              </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                A trusted real estate agency in Narasaraopet, renowned for transparent dealings, professional expertise, and exceptional customer service
+                A trusted real estate agency in Narasaraopet, renowned for transparent dealings, 
+                professional expertise, and exceptional customer service since our establishment
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="grid lg:grid-cols-2 gap-20 items-center">
               <div className="animate-slide-in-left">
-                <Card className="p-10 shadow-2xl border-0 bg-white backdrop-blur-sm">
-                  <CardHeader className="text-center pb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-2xl">
-                      <Users className="w-16 h-16 text-white" />
+                <Card className="p-12 shadow-2xl border-0 bg-white/80 backdrop-blur-sm rounded-3xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105">
+                  <CardHeader className="text-center pb-10">
+                    <div className="relative">
+                      <div className="w-36 h-36 bg-gradient-to-br from-blue-600 via-cyan-600 to-green-600 rounded-full mx-auto mb-8 flex items-center justify-center shadow-2xl relative overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-green-500/20 animate-pulse"></div>
+                        <Users className="w-18 h-18 text-white relative z-10" />
+                      </div>
                     </div>
-                    <CardTitle className="text-3xl text-gray-900 mb-2">Mr. Kovuru Nagaraju</CardTitle>
+                    <CardTitle className="text-3xl text-gray-900 mb-4 font-bold">Mr. Kovuru Nagaraju</CardTitle>
                     <CardDescription className="text-xl">
-                      <Badge className="bg-gradient-to-r from-blue-500 to-green-500 text-white text-lg px-4 py-2">M.B.A</Badge>
+                      <Badge className="bg-gradient-to-r from-blue-500 to-green-500 text-white text-lg px-6 py-3 rounded-full shadow-lg">
+                        M.B.A - Real Estate Expert
+                      </Badge>
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="text-center">
@@ -164,27 +210,42 @@ const Index = () => {
               </div>
               
               <div className="space-y-8 animate-slide-in-right">
-                <div className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-blue-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-xl border-l-8 border-blue-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-l-12">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <Star className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Our Mission</h3>
+                  </div>
                   <p className="text-gray-600 leading-relaxed text-lg">
                     To make real estate dealings stress-free and straightforward, ensuring clients receive 
-                    the best value for their investment with complete transparency.
+                    the best value for their investment with complete transparency and professional guidance.
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-green-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
+                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-xl border-l-8 border-green-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-l-12">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <TrendingUp className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Our Vision</h3>
+                  </div>
                   <p className="text-gray-600 leading-relaxed text-lg">
                     To be the premier real estate partner in Guntur district, serving both 
-                    first-time home buyers and seasoned investors with excellence.
+                    first-time home buyers and seasoned investors with excellence and integrity.
                   </p>
                 </div>
                 
-                <div className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-cyan-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Commitment</h3>
+                <div className="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-xl border-l-8 border-cyan-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:border-l-12">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <HeartHandshake className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Our Commitment</h3>
+                  </div>
                   <p className="text-gray-600 leading-relaxed text-lg">
                     End-to-end property solutions from identifying the perfect property to assisting with 
-                    legal paperwork and loan processing with dedicated support.
+                    legal paperwork and loan processing with dedicated, personalized support.
                   </p>
                 </div>
               </div>
@@ -193,27 +254,36 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6">
+      {/* Enhanced Services Section */}
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-green-50/50"></div>
+        <div className="container mx-auto px-6 relative">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Our Premium Services</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Comprehensive range of property consultancy services tailored to exceed your expectations
+            <div className="text-center mb-24">
+              <Badge className="mb-6 bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 text-lg font-semibold rounded-full shadow-lg">
+                Our Services
+              </Badge>
+              <h2 className="text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-green-800 bg-clip-text text-transparent mb-8 leading-tight">
+                Premium Property Solutions
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Comprehensive range of property consultancy services tailored to exceed your expectations 
+                and fulfill your real estate dreams
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:scale-110 border-0 shadow-lg overflow-hidden bg-white">
-                  <CardHeader className="text-center pb-6">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-125 transition-all duration-300 shadow-xl`}>
-                      <service.icon className="w-10 h-10 text-white" />
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:scale-110 border-0 shadow-xl overflow-hidden bg-white rounded-3xl relative">
+                  <div className={`absolute inset-0 ${service.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                  <CardHeader className="text-center pb-8 relative z-10">
+                    <div className={`w-24 h-24 bg-gradient-to-br ${service.color} rounded-full mx-auto mb-8 flex items-center justify-center group-hover:scale-125 transition-all duration-300 shadow-2xl relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                      <service.icon className="w-12 h-12 text-white relative z-10" />
                     </div>
-                    <CardTitle className="text-xl text-gray-900 group-hover:text-blue-600 transition-colors">{service.title}</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 group-hover:text-blue-700 transition-colors font-bold">{service.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="relative z-10">
                     <p className="text-gray-600 text-center leading-relaxed">{service.description}</p>
                   </CardContent>
                 </Card>
@@ -223,67 +293,98 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Property Gallery */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-green-50">
+      {/* Enhanced Property Gallery with Carousel */}
+      <section className="py-32 bg-gradient-to-br from-gray-50 via-blue-50 to-green-50 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Featured Properties</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Discover our handpicked premium properties and exclusive investment opportunities
+            <div className="text-center mb-24">
+              <Badge className="mb-6 bg-gradient-to-r from-blue-600 to-green-600 text-white px-6 py-2 text-lg font-semibold rounded-full shadow-lg">
+                Property Gallery
+              </Badge>
+              <h2 className="text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-green-800 bg-clip-text text-transparent mb-8 leading-tight">
+                Featured Properties
+              </h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                Discover our handpicked premium properties and exclusive investment opportunities 
+                in prime locations across Narasaraopet
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {propertyImages.map((property, index) => (
-                <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-xl bg-white">
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={property.url} 
-                      alt={property.title}
-                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold">
-                      {property.type}
-                    </Badge>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">{property.title}</h3>
-                    <p className="text-gray-500 text-sm mb-2">{property.area}</p>
-                    <p className="text-sm text-gray-600">Narasaraopet Area</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <Carousel className="w-full max-w-6xl mx-auto">
+              <CarouselContent className="-ml-4">
+                {propertyImages.map((property, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-xl bg-white rounded-3xl">
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={property.url} 
+                          alt={property.title}
+                          className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <Badge className="absolute top-6 right-6 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold px-4 py-2 rounded-full shadow-lg">
+                          {property.type}
+                        </Badge>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="flex flex-wrap gap-2">
+                            {property.features.map((feature, idx) => (
+                              <Badge key={idx} className="bg-white/90 text-gray-800 text-xs px-2 py-1">
+                                {feature}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <CardContent className="p-8">
+                        <h3 className="font-bold text-gray-900 text-xl mb-3">{property.title}</h3>
+                        <div className="flex justify-between items-center">
+                          <p className="text-blue-600 font-semibold text-lg">{property.area}</p>
+                          <p className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Narasaraopet</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 bg-gradient-to-r from-blue-600 to-green-600 border-0 text-white hover:from-blue-700 hover:to-green-700" />
+              <CarouselNext className="right-0 bg-gradient-to-r from-blue-600 to-green-600 border-0 text-white hover:from-blue-700 hover:to-green-700" />
+            </Carousel>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-gradient-to-br from-blue-900 via-cyan-900 to-green-900 text-white relative overflow-hidden">
+      {/* Enhanced Why Choose Us */}
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-cyan-900 to-green-900 text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-20 w-40 h-40 bg-blue-400/20 rounded-full blur-xl animate-pulse"></div>
           <div className="absolute bottom-32 right-16 w-32 h-32 bg-green-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/3 w-36 h-36 bg-cyan-400/20 rounded-full blur-xl animate-pulse delay-500"></div>
         </div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-5xl font-bold mb-6">Why Choose Siva Sai Real Estates?</h2>
-              <p className="text-xl opacity-90 max-w-3xl mx-auto">
-                Your success is our priority. Discover what makes us the preferred choice for property solutions
+            <div className="text-center mb-24">
+              <Badge className="mb-6 bg-white/20 backdrop-blur-sm text-white px-6 py-2 text-lg font-semibold rounded-full shadow-lg border border-white/30">
+                Why Choose Us
+              </Badge>
+              <h2 className="text-6xl font-bold mb-8 leading-tight">Why Choose Siva Sai Real Estates?</h2>
+              <p className="text-xl opacity-90 max-w-4xl mx-auto leading-relaxed">
+                Your success is our priority. Discover what makes us the preferred choice for property solutions 
+                and why clients trust us with their real estate dreams
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {whyChooseUs.map((item, index) => (
                 <div key={index} className="text-center group">
-                  <div className={`w-24 h-24 bg-gradient-to-br ${item.color} rounded-full mx-auto mb-8 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl`}>
-                    <item.icon className="w-12 h-12 text-white" />
+                  <div className={`w-28 h-28 bg-gradient-to-br ${item.color} rounded-full mx-auto mb-10 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl relative overflow-hidden`}>
+                    <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                    <item.icon className="w-14 h-14 text-white relative z-10" />
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
-                  <p className="opacity-90 leading-relaxed text-lg">{item.description}</p>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300 border border-white/20">
+                    <h3 className="text-2xl font-bold mb-6">{item.title}</h3>
+                    <p className="opacity-90 leading-relaxed text-lg">{item.description}</p>
+                  </div>
                 </div>
               ))}
             </div>
