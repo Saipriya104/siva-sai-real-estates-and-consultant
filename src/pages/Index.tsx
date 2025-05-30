@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Phone, Mail, Home, Building, Hammer, CreditCard, Star, Users, Shield, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Home, Building, Hammer, CreditCard, Star, Users, Shield, Clock, TrendingUp, Award, HeartHandshake } from "lucide-react";
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,161 +12,201 @@ const Index = () => {
     {
       icon: Home,
       title: "Buying & Selling",
-      description: "Houses, plots, flats, and lands in Narasaraopet and surrounding areas"
+      description: "Premium houses, plots, flats, and lands in Narasaraopet and surrounding areas",
+      color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Building,
-      title: "Property Consultation",
-      description: "Expert guidance for both buyers and sellers with transparent dealings"
+      title: "Property Consultation", 
+      description: "Expert guidance for both buyers and sellers with transparent dealings",
+      color: "from-purple-500 to-pink-500"
     },
     {
       icon: Hammer,
       title: "Construction Services",
-      description: "Contract-based construction for your dream home with quality assurance"
+      description: "Contract-based construction for your dream home with quality assurance",
+      color: "from-orange-500 to-red-500"
     },
     {
       icon: CreditCard,
       title: "Loan Assistance",
-      description: "Bank loan support for property purchase or construction projects"
+      description: "Bank loan support for property purchase or construction projects",
+      color: "from-green-500 to-emerald-500"
     }
   ];
 
   const propertyImages = [
     {
-      url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=500&h=300&fit=crop",
-      title: "Modern Family Home",
-      type: "House"
+      url: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=500&h=300&fit=crop",
+      title: "Luxury Family Villa",
+      type: "House",
+      price: "₹85 Lakhs",
+      area: "2,400 sq ft"
     },
     {
-      url: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=500&h=300&fit=crop",
-      title: "Premium Apartment",
-      type: "Flat"
+      url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=500&h=300&fit=crop",
+      title: "Modern Apartment",
+      type: "Flat",
+      price: "₹45 Lakhs",
+      area: "1,200 sq ft"
     },
     {
       url: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=500&h=300&fit=crop",
-      title: "Commercial Building",
-      type: "Commercial"
+      title: "Commercial Complex",
+      type: "Commercial",
+      price: "₹1.2 Crores",
+      area: "5,000 sq ft"
     },
     {
-      url: "https://images.unsplash.com/photo-1466442929976-97f336a657be?w=500&h=300&fit=crop",
-      title: "Residential Plot",
-      type: "Land"
+      url: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=500&h=300&fit=crop",
+      title: "Prime Location Plot",
+      type: "Land",
+      price: "₹25 Lakhs",
+      area: "1,800 sq ft"
     }
   ];
 
   const whyChooseUs = [
     {
-      icon: Star,
+      icon: Award,
       title: "Expert Leadership",
-      description: "Led by Mr. Kovuru Nagaraju (MBA) with professional expertise"
+      description: "Led by Mr. Kovuru Nagaraju (MBA) with professional expertise",
+      color: "from-yellow-400 to-orange-500"
     },
     {
       icon: Shield,
       title: "Transparent Dealings",
-      description: "Honest and straightforward approach to all transactions"
+      description: "Honest and straightforward approach to all transactions",
+      color: "from-blue-400 to-indigo-500"
     },
     {
-      icon: Users,
+      icon: HeartHandshake,
       title: "Personalized Service",
-      description: "Tailored solutions for individual buyers and investors"
+      description: "Tailored solutions for individual buyers and investors",
+      color: "from-pink-400 to-rose-500"
     },
     {
-      icon: Clock,
+      icon: TrendingUp,
       title: "End-to-End Support",
-      description: "Complete assistance from property search to legal paperwork"
+      description: "Complete assistance from property search to legal paperwork",
+      color: "from-green-400 to-teal-500"
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Rajesh Kumar",
+      text: "Excellent service! Helped us find our dream home in Narasaraopet.",
+      rating: 5
+    },
+    {
+      name: "Priya Sharma",
+      text: "Very professional and transparent. Highly recommended!",
+      rating: 5
+    },
+    {
+      name: "Venkat Reddy",
+      text: "Great support throughout the entire property buying process.",
+      rating: 5
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-green-600 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/40"></div>
+      <section className="relative h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-16 w-40 h-40 bg-gradient-to-r from-pink-400/20 to-orange-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-gradient-to-r from-green-400/20 to-cyan-400/20 rounded-full blur-xl animate-pulse delay-500"></div>
+        </div>
+        
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage: "url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&h=1080&fit=crop')"
           }}
         ></div>
         
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Shiva Sai Real Estate
-            <span className="block text-3xl md:text-4xl text-yellow-400 mt-2">& Consultant</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in">
-            Your Trusted Partner for Property Solutions in Narasaraopet
+        <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-6">
+          <div className="animate-fade-in">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-tight">
+              Siva Sai Real Estates
+            </h1>
+            <span className="block text-3xl md:text-5xl text-yellow-400 font-semibold mb-8 animate-slide-in-right">
+              & Consultant
+            </span>
+          </div>
+          <p className="text-xl md:text-2xl mb-10 opacity-90 animate-fade-in max-w-3xl mx-auto leading-relaxed">
+            Your Trusted Partner for Premium Property Solutions in Narasaraopet
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3">
-              View Properties
+          <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
+            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-10 py-4 text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              Explore Properties
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black px-8 py-3">
-              Contact Us
+            <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-purple-900 px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              Contact Expert
             </Button>
           </div>
         </div>
-        
-        {/* Floating elements */}
-        <div className="absolute top-20 left-20 w-20 h-20 bg-yellow-400/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-32 right-16 w-16 h-16 bg-blue-400/20 rounded-full animate-pulse"></div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">About Shiva Sai Real Estate</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                A trusted real estate agency in Narasaraopet, known for transparent dealings and personalized service
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">About Siva Sai Real Estates</h2>
+              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                A trusted real estate agency in Narasaraopet, renowned for transparent dealings, professional expertise, and exceptional customer service
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <Card className="p-8 shadow-lg border-0 bg-white">
-                  <CardHeader className="text-center pb-6">
-                    <div className="w-24 h-24 bg-gradient-to-br from-blue-600 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <Users className="w-12 h-12 text-white" />
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="animate-slide-in-left">
+                <Card className="p-10 shadow-2xl border-0 bg-white backdrop-blur-sm">
+                  <CardHeader className="text-center pb-8">
+                    <div className="w-32 h-32 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-2xl">
+                      <Users className="w-16 h-16 text-white" />
                     </div>
-                    <CardTitle className="text-2xl text-gray-900">Mr. Kovuru Nagaraju</CardTitle>
-                    <CardDescription className="text-lg">
-                      <Badge className="bg-yellow-500 text-black">M.B.A</Badge>
+                    <CardTitle className="text-3xl text-gray-900 mb-2">Mr. Kovuru Nagaraju</CardTitle>
+                    <CardDescription className="text-xl">
+                      <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-lg px-4 py-2">M.B.A</Badge>
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="text-center">
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed text-lg">
                       With professional expertise and an MBA background, Mr. Nagaraju leads our team in providing 
                       exceptional real estate services. His commitment to transparent dealings and client satisfaction 
-                      has made Shiva Sai Real Estate a trusted name in Guntur district.
+                      has made Siva Sai Real Estates a trusted name in Guntur district.
                     </p>
                   </CardContent>
                 </Card>
               </div>
               
-              <div className="space-y-6">
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Mission</h3>
-                  <p className="text-gray-600">
+              <div className="space-y-8 animate-slide-in-right">
+                <div className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-blue-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">
                     To make real estate dealings stress-free and straightforward, ensuring clients receive 
-                    the best value for their money.
+                    the best value for their investment with complete transparency.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-600">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Vision</h3>
-                  <p className="text-gray-600">
-                    To be the go-to partner for all real estate needs in Guntur district, serving both 
-                    first-time home buyers and seasoned investors.
+                <div className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-green-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Vision</h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    To be the premier real estate partner in Guntur district, serving both 
+                    first-time home buyers and seasoned investors with excellence.
                   </p>
                 </div>
                 
-                <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Commitment</h3>
-                  <p className="text-gray-600">
-                    End-to-end property solutions from identifying the right property to assisting with 
-                    legal paperwork and loan processing.
+                <div className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-purple-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">Our Commitment</h3>
+                  <p className="text-gray-600 leading-relaxed text-lg">
+                    End-to-end property solutions from identifying the perfect property to assisting with 
+                    legal paperwork and loan processing with dedicated support.
                   </p>
                 </div>
               </div>
@@ -176,24 +216,24 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-              <p className="text-xl text-gray-600">
-                Complete range of property consultancy services tailored to your needs
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Our Premium Services</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive range of property consultancy services tailored to exceed your expectations
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
-                  <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <service.icon className="w-8 h-8 text-white" />
+                <Card key={index} className="group hover:shadow-2xl transition-all duration-500 hover:scale-110 border-0 shadow-lg overflow-hidden bg-white">
+                  <CardHeader className="text-center pb-6">
+                    <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-125 transition-all duration-300 shadow-xl`}>
+                      <service.icon className="w-10 h-10 text-white" />
                     </div>
-                    <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
+                    <CardTitle className="text-xl text-gray-900 group-hover:text-purple-600 transition-colors">{service.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 text-center leading-relaxed">{service.description}</p>
@@ -206,32 +246,65 @@ const Index = () => {
       </section>
 
       {/* Property Gallery */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-purple-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Property Showcase</h2>
-              <p className="text-xl text-gray-600">
-                Discover our featured properties and investment opportunities
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Featured Properties</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our handpicked premium properties and exclusive investment opportunities
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {propertyImages.map((property, index) => (
-                <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border-0 shadow-lg">
-                  <div className="relative">
+                <Card key={index} className="group overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-xl bg-white">
+                  <div className="relative overflow-hidden">
                     <img 
                       src={property.url} 
                       alt={property.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
-                    <Badge className="absolute top-4 right-4 bg-yellow-500 text-black">
+                    <Badge className="absolute top-4 right-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold">
                       {property.type}
                     </Badge>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-gray-900">{property.title}</h3>
-                    <p className="text-sm text-gray-600 mt-1">Narasaraopet Area</p>
+                  <CardContent className="p-6">
+                    <h3 className="font-bold text-gray-900 text-lg mb-2">{property.title}</h3>
+                    <p className="text-purple-600 font-semibold text-xl mb-1">{property.price}</p>
+                    <p className="text-gray-500 text-sm mb-2">{property.area}</p>
+                    <p className="text-sm text-gray-600">Narasaraopet Area</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">What Our Clients Say</h2>
+              <p className="text-xl text-gray-600">
+                Real stories from satisfied customers who found their dream properties with us
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="p-8 shadow-xl border-0 bg-gradient-to-br from-white to-purple-50 hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                  <CardContent className="text-center">
+                    <div className="flex justify-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 mb-6 italic leading-relaxed">"{testimonial.text}"</p>
+                    <p className="font-semibold text-purple-600">{testimonial.name}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -241,24 +314,29 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-green-600 text-white">
-        <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Why Choose Shiva Sai Real Estate?</h2>
-              <p className="text-xl opacity-90">
-                Your success is our priority. Here's what sets us apart
+      <section className="py-24 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-20 w-40 h-40 bg-purple-400/20 rounded-full blur-xl animate-pulse"></div>
+          <div className="absolute bottom-32 right-16 w-32 h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold mb-6">Why Choose Siva Sai Real Estates?</h2>
+              <p className="text-xl opacity-90 max-w-3xl mx-auto">
+                Your success is our priority. Discover what makes us the preferred choice for property solutions
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {whyChooseUs.map((item, index) => (
                 <div key={index} className="text-center group">
-                  <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:bg-yellow-400 group-hover:text-black transition-all duration-300">
-                    <item.icon className="w-10 h-10" />
+                  <div className={`w-24 h-24 bg-gradient-to-br ${item.color} rounded-full mx-auto mb-8 flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-2xl`}>
+                    <item.icon className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                  <p className="opacity-90 leading-relaxed">{item.description}</p>
+                  <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+                  <p className="opacity-90 leading-relaxed text-lg">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -267,57 +345,57 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
-              <p className="text-xl text-gray-600">
-                Ready to find your dream property? Get in touch with our expert team
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6">Get In Touch</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Ready to find your dream property? Connect with our expert team for personalized assistance
               </p>
             </div>
             
-            <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <Card className="p-8 shadow-lg border-0 bg-gray-50">
+                <Card className="p-10 shadow-2xl border-0 bg-white">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-gray-900 mb-6">Get In Touch</CardTitle>
+                    <CardTitle className="text-3xl text-gray-900 mb-8">Contact Information</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-6 h-6 text-white" />
+                  <CardContent className="space-y-8">
+                    <div className="flex items-start space-x-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-xl">
+                        <MapPin className="w-8 h-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Office Address</h3>
-                        <p className="text-gray-600 leading-relaxed">
+                        <h3 className="font-bold text-gray-900 mb-2 text-xl">Office Address</h3>
+                        <p className="text-gray-600 leading-relaxed text-lg">
                           Nagarjuna Nagar, near Check Post,<br />
                           Sattenapalli Road, Narasaraopet – 522601
                         </p>
                       </div>
                     </div>
                     
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-6 h-6 text-white" />
+                    <div className="flex items-start space-x-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-xl">
+                        <Phone className="w-8 h-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Phone Numbers</h3>
-                        <p className="text-gray-600">
-                          <a href="tel:9966607734" className="hover:text-blue-600 transition-colors">9966607734</a><br />
-                          <a href="tel:6309688077" className="hover:text-blue-600 transition-colors">6309688077</a>
+                        <h3 className="font-bold text-gray-900 mb-2 text-xl">Phone Numbers</h3>
+                        <p className="text-gray-600 text-lg">
+                          <a href="tel:9966607734" className="hover:text-purple-600 transition-colors font-semibold">9966607734</a><br />
+                          <a href="tel:6309688077" className="hover:text-purple-600 transition-colors font-semibold">6309688077</a>
                         </p>
                       </div>
                     </div>
                     
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-green-600 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-6 h-6 text-white" />
+                    <div className="flex items-start space-x-6">
+                      <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-rose-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-xl">
+                        <Mail className="w-8 h-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                        <p className="text-gray-600">
-                          <a href="mailto:sivasairealtor@gmail.com" className="hover:text-blue-600 transition-colors">
+                        <h3 className="font-bold text-gray-900 mb-2 text-xl">Email</h3>
+                        <p className="text-gray-600 text-lg">
+                          <a href="mailto:sivasairealtor@gmail.com" className="hover:text-purple-600 transition-colors font-semibold">
                             sivasairealtor@gmail.com
                           </a>
                         </p>
@@ -328,50 +406,50 @@ const Index = () => {
               </div>
               
               <div>
-                <Card className="p-8 shadow-lg border-0">
+                <Card className="p-10 shadow-2xl border-0 bg-white">
                   <CardHeader>
-                    <CardTitle className="text-2xl text-gray-900 mb-6">Send us a Message</CardTitle>
+                    <CardTitle className="text-3xl text-gray-900 mb-8">Send us a Message</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <form className="space-y-6">
-                      <div className="grid md:grid-cols-2 gap-4">
+                    <form className="space-y-8">
+                      <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                          <label className="block text-sm font-semibold text-gray-700 mb-3">Name</label>
                           <input 
                             type="text" 
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-lg"
                             placeholder="Your Name"
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                          <label className="block text-sm font-semibold text-gray-700 mb-3">Phone</label>
                           <input 
                             type="tel" 
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-lg"
                             placeholder="Your Phone"
                           />
                         </div>
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <label className="block text-sm font-semibold text-gray-700 mb-3">Email</label>
                         <input 
                           type="email" 
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-lg"
                           placeholder="Your Email"
                         />
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <label className="block text-sm font-semibold text-gray-700 mb-3">Message</label>
                         <textarea 
-                          rows={4}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                          rows={5}
+                          className="w-full px-6 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all text-lg"
                           placeholder="Tell us about your property requirements"
                         ></textarea>
                       </div>
                       
-                      <Button className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white py-3">
+                      <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                         Send Message
                       </Button>
                     </form>
@@ -384,34 +462,34 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white py-16">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center">
-              <h3 className="text-2xl font-bold mb-4">Shiva Sai Real Estate & Consultant</h3>
-              <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+              <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Siva Sai Real Estates & Consultant</h3>
+              <p className="text-gray-300 mb-10 max-w-3xl mx-auto text-lg leading-relaxed">
                 Your trusted partner for all real estate needs in Narasaraopet and surrounding areas. 
-                Professional service, transparent dealings, and personalized solutions.
+                Professional service, transparent dealings, and personalized solutions for your property dreams.
               </p>
               
-              <div className="flex flex-wrap justify-center gap-6 mb-8">
-                <a href="tel:9966607734" className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 transition-colors">
-                  <Phone className="w-4 h-4" />
-                  <span>9966607734</span>
+              <div className="flex flex-wrap justify-center gap-8 mb-12">
+                <a href="tel:9966607734" className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors group">
+                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className="text-lg font-semibold">9966607734</span>
                 </a>
-                <a href="tel:6309688077" className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 transition-colors">
-                  <Phone className="w-4 h-4" />
-                  <span>6309688077</span>
+                <a href="tel:6309688077" className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors group">
+                  <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className="text-lg font-semibold">6309688077</span>
                 </a>
-                <a href="mailto:sivasairealtor@gmail.com" className="flex items-center space-x-2 text-gray-300 hover:text-yellow-400 transition-colors">
-                  <Mail className="w-4 h-4" />
-                  <span>sivasairealtor@gmail.com</span>
+                <a href="mailto:sivasairealtor@gmail.com" className="flex items-center space-x-3 text-gray-300 hover:text-purple-400 transition-colors group">
+                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className="text-lg font-semibold">sivasairealtor@gmail.com</span>
                 </a>
               </div>
               
-              <div className="border-t border-gray-800 pt-8">
-                <p className="text-gray-400 text-sm">
-                  © 2024 Shiva Sai Real Estate & Consultant. All rights reserved.
+              <div className="border-t border-gray-700 pt-10">
+                <p className="text-gray-400">
+                  © 2024 Siva Sai Real Estates & Consultant. All rights reserved.
                 </p>
               </div>
             </div>
