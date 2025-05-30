@@ -44,42 +44,36 @@ const Index = () => {
       url: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=500&h=300&fit=crop",
       title: "Luxury Family Villa",
       type: "House",
-      area: "2,400 sq ft",
       features: ["3 Bedrooms", "Garden", "Parking"]
     },
     {
       url: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=500&h=300&fit=crop",
       title: "Modern Apartment",
       type: "Flat",
-      area: "1,200 sq ft",
       features: ["2 Bedrooms", "Balcony", "Lift"]
     },
     {
       url: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=500&h=300&fit=crop",
       title: "Commercial Complex",
       type: "Commercial",
-      area: "5,000 sq ft",
       features: ["Ground Floor", "Main Road", "Parking"]
     },
     {
       url: "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=500&h=300&fit=crop",
       title: "Prime Location Plot",
       type: "Land",
-      area: "1,800 sq ft",
       features: ["Corner Plot", "Approved", "Clear Title"]
     },
     {
       url: "https://images.unsplash.com/photo-1524230572899-a752b3835840?w=500&h=300&fit=crop",
       title: "Premium Villa",
       type: "House",
-      area: "3,200 sq ft",
       features: ["4 Bedrooms", "Swimming Pool", "Garden"]
     },
     {
       url: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&h=300&fit=crop",
       title: "Scenic Property",
       type: "Villa",
-      area: "2,800 sq ft",
       features: ["Mountain View", "Spacious", "Modern"]
     }
   ];
@@ -137,7 +131,7 @@ const Index = () => {
         <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-6">
           <div className="animate-fade-in">
             <div className="mb-8">
-              <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent leading-tight drop-shadow-2xl">
+              <h1 className="text-6xl md:text-8xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent leading-tight drop-shadow-2xl">
                 Siva Sai Real Estates
               </h1>
               <span className="block text-3xl md:text-5xl text-green-400 font-semibold mb-8 animate-slide-in-right drop-shadow-lg">
@@ -338,7 +332,6 @@ const Index = () => {
                       <CardContent className="p-8">
                         <h3 className="font-bold text-gray-900 text-xl mb-3">{property.title}</h3>
                         <div className="flex justify-between items-center">
-                          <p className="text-blue-600 font-semibold text-lg">{property.area}</p>
                           <p className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Narasaraopet</p>
                         </div>
                       </CardContent>
@@ -514,7 +507,7 @@ const Index = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center">
-              <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Siva Sai Real Estates & Consultant</h3>
+              <h3 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">Siva Sai Real Estates & Consultant</h3>
               <p className="text-gray-300 mb-10 max-w-3xl mx-auto text-lg leading-relaxed">
                 Your trusted partner for all real estate needs in Narasaraopet and surrounding areas. 
                 Professional service, transparent dealings, and personalized solutions for your property dreams.
